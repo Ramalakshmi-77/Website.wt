@@ -1,0 +1,730 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #eeee;
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-image: url('bg2');
+    background-color: #eeee;
+    padding: 17px;
+    box-shadow: 0px 2px 2px 2px rgb(162, 162, 162);
+}
+nav .logo{
+    margin-left: 22px;
+    font-size: 24px;
+}
+nav .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+ul{
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items horizontally */
+    gap: 20px;
+}
+nav ul li{
+    list-style: none;
+    display: flex; /* Ensure items are aligned */
+}
+ul li a{
+    margin-inline: 22px;
+    font-size: 20px;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Default color */
+    padding: 10px 15px; /* Add some padding */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+nav ul li a:hover {
+    color: #0b27c7; /* Change color on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
+    background-color: #6cdc82; /* Change background color on hover */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+ul li i{
+    font-size: 22px;
+}
+nav ul li i:hover {
+    color: #ff7f50; /* Change color on hover */
+    transform: scale(1.2); /* Slight zoom-in on hover */
+}
+ul li #home{
+    color: rgb(5, 167, 167);
+}
+ul li a:hover{
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+ul li i:hover{
+    color: gray;
+    cursor: pointer;
+}
+
+
+
+
+/* Keyframe animation for the logo */
+@keyframes logoGrow {
+    0% {
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: 2px;
+    }
+    50% {
+        font-size: 2.6rem;
+        color: #59cae0; /* Change to your desired highlight color */
+        letter-spacing: 4px; /* Slightly increase letter spacing */
+    }
+    100% {
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: 2px;
+    }
+}
+
+/* Logo styles */
+nav .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    animation: logoGrow 5s infinite ease-in-out; /* Apply keyframe animation */
+}
+
+
+/* Main container styles */
+.main {
+    position: relative; /* Ensures the pseudo-element is positioned relative to the .main container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: none; /* Remove direct background from the main container */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow around the container */
+    border-radius: 10px; /* Smooth rounded corners */
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('bg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5; /* Adjust this value to control the opacity */
+    z-index: -1; /* Ensure the background stays behind the content */
+    border-radius: 10px; /* Make the background's corners match the container */
+}
+
+/* Text styles */
+.mainText h1, .mainText h2, .mainText p {
+    margin: 10px 0;
+}
+
+.mainText h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5); /* Subtle text shadow */
+}
+
+.mainText h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5); /* Bolder shadow for bigger text */
+    color: #333;
+}
+
+.mainText p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-animate {
+    animation: fadeInScale 0.5s ease forwards; /* Adjust duration as needed */
+}
+
+
+
+
+/* Button styles */
+.mainText button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(255, 127, 80, 0.3); /* Button shadow */
+    transition: all 0.3s ease;
+}
+
+.mainText button:hover {
+    background-color: #ff6347; /* Darker on hover */
+    box-shadow: 0px 8px 20px rgba(255, 99, 71, 0.5); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Image styles */
+.main img {
+    border-radius: 10px; /* Rounded corners for the image */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Image shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main img:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+
+.head h1{
+    text-align: center;
+    padding: 33px;
+    margin-top: 32px;
+}
+.head span{
+    color: rgb(2, 164, 164);
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+}
+.card .crd{
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    margin-inline: 11px;
+    position: relative; /* Ensure positioning context for the child elements */
+    overflow: hidden; /* Hide any overflow for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; 
+}
+.crd img {
+    width: 100%; /* Set to 100% to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease, opacity 0.3s ease;; /* Smooth scaling transition */
+}
+
+.crd:hover img {
+    transform: scale(1.05); /* Slightly scale the image on hover */
+    opacity: 0.9;
+}
+
+.crd:hover {
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    border-color: #161013; /* Change border color on hover (example: hot pink) */
+}
+
+/*.crdText{
+    margin-left: 16px;
+    padding: 8px;
+}*/
+.crdText {
+    position: absolute; /* Position text overlay */
+    bottom: 0; /* Position it at the bottom */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    color: white; /* Text color */
+    padding: 10px; /* Padding for text */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.crd:hover .crdText {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+.crdText button{
+    width: 110px;
+    height: 33px;
+    border: none;
+    background-color: rgb(5, 141, 141);
+    color: white;
+    font-size: 19px;
+    margin-top: 11px;
+}
+.crdText i{
+    color: rgb(255, 149, 0);
+}
+
+.blog{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    margin-inline: 22px;
+    border-radius: 11px;
+   
+}
+.blog:hover{
+    transition: 0.6s ease;
+    width: 520px;
+    height: 320px;
+}
+.blog img{
+    padding: 22px;
+    width: 85%;
+}
+.blogText{
+    padding: 12px;
+    margin-top: 33px;
+}
+.blogText a{
+    width: 130px;
+    padding: 4px;
+    height: 18px;
+    background-color: rgb(4, 136, 136);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+position: relative;
+top: 33px;
+}
+.letter{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color:rgb(2, 2, 66);
+    padding: 43px;
+}
+.inp{
+    display: flex;
+}
+.inp input{
+    width: 330px;
+    height: 33px;
+    outline: none;
+    font-size: 18px;
+    border: none;
+}
+.inp button{
+    width: 100px;
+    height: 33px;
+    background-color: rgb(2, 173, 173);
+    color: white;
+    border: none;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 53px;
+}
+.footer .footerText{
+    margin-inline: 85px;
+}
+.footerText p{
+    margin-top: 11px;
+}
+
+/* about */
+.about {
+    position: relative; /* Necessary for positioning the pseudo-element */
+    overflow: hidden; /* Ensures no overflow from the pseudo-element */
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('bg00'); /* Ensure this path is correct */
+    background-repeat: no-repeat;
+    background-size: cover; /* This ensures the image covers the entire area */
+    opacity: 0.4; /* Adjust this value to control the opacity */
+    z-index: -1; /* Ensure the background stays behind the content */
+    border-radius: 10px; /* Make the background's corners match the container */
+}
+
+.aboutus{
+    background-color: rgb(1, 1, 42);
+    color: white;
+    padding: 56px;
+    font-size: 19px;
+}
+
+.me{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    background-color: #fff;
+    padding: 33px;
+    gap: 20px;
+    margin-left: 18%;
+    margin-top: 7%;
+}
+.me img{
+    max-width: 50%;
+    height: auto;
+}
+
+.trends {
+    position: relative; /* Ensures the pseudo-element is positioned relative to the .main container */
+    background: none; /* Remove direct background from the main container */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow around the container */
+    border-radius: 10px; /* Smooth rounded corners */
+}
+.trends::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('bg0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4; /* Adjust this value to control the opacity */
+    z-index: -1; /* Ensure the background stays behind the content */
+    border-radius: 10px; /* Make the background's corners match the container */
+}
+
+
+/* /contact */
+
+.contact{
+    position: relative; /* Ensures the pseudo-element is positioned relative to the .main container */
+    background: none; /* Remove direct background from the main container */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow around the container */
+    border-radius: 10px; /* Smooth rounded corners */
+
+}
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('bg000');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5; /* Adjust this value to control the opacity */
+    z-index: -1; /* Ensure the background stays behind the content */
+    border-radius: 10px;
+}
+.contactus{
+    background-color: rgb(1, 1, 42);
+    color: white;
+    padding: 56px;
+    font-size: 19px;
+}
+
+.contactMe{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin-top: 5%;
+    background-color: #fff;
+    margin-left: 10%;
+
+}
+.contactMe img{
+    width: 55%;
+}
+
+.contactText{
+    padding: 22px;
+    width: 600px;
+}
+.contactText p{
+    margin-top: 12px;
+}
+.form{
+    text-align: center;
+    margin-top: 5%;
+    padding: 22px;
+}
+.form input{
+    width: 300px;
+    padding: 5px;
+    height: 27px;
+    margin-top: 11px;
+}
+.form button{
+    width: 300px;
+    height: 36px;
+    background-color: rgb(2, 54, 54);
+    color: white;
+    font-size: 22px;
+    border: none;
+    margin-top: 22px;
+    
+}
+
+/* cart */
+
+.cart{
+    display: flex;
+    justify-content: center;
+    display: none;
+
+}
+.cartText{
+    padding: 22px;
+    margin-top: 22px;
+}
+.cartText p{
+    margin-top: 12px;
+}
+.cartText h2{
+    margin-top: 11px;
+}
+.cartText .btn button{
+    width: 140px;
+    height: 40px;
+    background-color: rgb(255, 89, 0);
+    color: white;
+    border: none;
+    font-size: 22px;
+    margin-inline: 11px;
+    margin-top: 22px;
+}
+.cartText .back{
+    width: 140px;
+    height: 40px;
+    background-color:rgb(4, 81, 81);
+    color: white;
+    border: none;
+    font-size: 22px;
+    margin-inline: 11px;
+    margin-top: 22px;
+    margin-top: 22px;
+}
+
+
+
+/* Add your new animation styles here */
+.hidden {
+    display: none; /* Hides the element */
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards; /* This should match your fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* General responsive styles */
+@media only screen and (max-width: 1200px) {
+    /* For tablet screens like iPads */
+    .mainText h1 {
+        font-size: 2.5rem;
+    }
+
+    .mainText h2 {
+        font-size: 2rem;
+    }
+
+    .mainText p {
+        font-size: 1rem;
+    }
+
+    nav .logo h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .blog {
+        width: 450px;
+        height: 270px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile screens */
+
+    /* Logo */
+    nav .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 10px 5px;
+        margin-inline: 10px;
+    }
+
+    /* Main section */
+    .main {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+
+    .main img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .mainText {
+        padding: 20px;
+    }
+
+    .mainText h1 {
+        font-size: 2rem;
+    }
+
+    .mainText h2 {
+        font-size: 1.5rem;
+    }
+
+    .mainText p {
+        font-size: 1rem;
+    }
+
+    .mainText button {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    /* Card Section */
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .crd {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* Blog Section */
+    .blog {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* For smaller mobile screens */
+    nav .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .mainText h1 {
+        font-size: 1.8rem;
+    }
+
+    .mainText h2 {
+        font-size: 1.3rem;
+    }
+
+    .mainText p {
+        font-size: 0.9rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .blogText a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .blogText {
+        padding: 5px;
+    }
+
+    .blogText a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+.social-media {
+    text-align: center; /* Center the text and icons */
+    margin-top: 30px; /* Space above the section */
+}
+
+.social-media h3 {
+    margin-bottom: 10px; /* Space between heading and icons */
+}
+
+.social-media a {
+    margin: 0 15px; /* Space between icons */
+    font-size: 24px; /* Adjust the size of the icons */
+    color: #000; /* Change this to your preferred color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-media a:hover {
+    color: #ff69b4; /* Change color on hover (example: hot pink) */
+}
+
